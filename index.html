@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz sobre o Brasil</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 20px;
+  }
+
+  ol {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .dica {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  #progresso {
+    margin-bottom: 20px;
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  #barra {
+    height: 100%;
+    width: 0;
+    background-color: #007bff;
+    border-radius: 5px;
+  }
+
+  #resultado {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #video-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #videoInput {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  #addVideoButton {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #addVideoButton:hover {
+    background-color: #45a049;
+  }
+
+  #videoFrame {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #youtubeFrame {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz sobre o Brasil</h1>
+  <div id="progresso">
+    <div id="barra"></div>
+  </div>
+  <form id="quizForm" action="#" method="post">
+    <ol>
+            <li>
+        <label for="q1">Qual é a capital do Brasil?</label><br>
+        <input type="radio" name="q1" value="a"> Brasília
+        <input type="radio" name="q1" value="b"> São Paulo
+        <input type="radio" name="q1" value="c"> Rio de Janeiro
+        <input type="radio" name="q1" value="d"> Belo Horizonte
+        <button type="button" class="dica" data-dica="A capital foi construída no formato de um avião">Dica</button>
+      </li>
+            <li>
+        <label for="q2">Qual é o maior rio do Brasil?</label><br>
+        <input type="radio" name="q2" value="a"> Rio Amazonas
+        <input type="radio" name="q2" value="b"> Rio São Francisco
+        <input type="radio" name="q2" value="c"> Rio Paraná
+        <input type="radio" name="q2" value="d"> Rio Tietê
+        <button type="button" class="dica" data-dica="O nome desse rio é uma homenagem às guerreiras da mitologia grega">Dica</button>
+      </li>
+      <li>
+        <label for="q3">Qual é o ponto mais alto do Brasil?</label><br>
+        <input type="radio" name="q3" value="a"> Pico da Neblina
+        <input type="radio" name="q3" value="b"> Pão de Açúcar
+        <input type="radio" name="q3" value="c"> Cristo Redentor
+        <input type="radio" name="q3" value="d"> Pico Paraná
+        <button type="button" class="dica" data-dica="Esse ponto está localizado na fronteira com a Venezuela">Dica</button>
+      </li>
+      <br>
+      <li>
+        <label for="q4">Qual é o período oficial de Carnaval no Brasil?</label><br>
+        <input type="radio" name="q4" value="a"> Dezembro
+        <input type="radio" name="q4" value="b"> Fevereiro
+        <input type="radio" name="q4" value="c"> Março
+        <input type="radio" name="q4" value="d"> Julho
+        <button type="button" class="dica" data-dica="É comemorado antes da Quaresma e termina na terça-feira antes da Quarta-Feira de Cinzas">Dica</button>
+      </li>
+      <li>
+        <label for="q5">Qual é o litoral mais extenso do Brasil?</label><br>
+        <input type="radio" name="q5" value="a"> Litoral Sul
+        <input type="radio" name="q5" value="b"> Litoral Norte
+        <input type="radio" name="q5" value="c"> Litoral Nordeste
+        <input type="radio" name="q5" value="d"> Litoral Sudeste
+        <button type="button" class="dica" data-dica="É conhecido por suas belas praias e é famoso internacionalmente">Dica</button>
+      </li>
+      <li>
+        <label for="q6">Qual é o maior estado do Brasil em área territorial?</label><br>
+        <input type="radio" name="q6" value="a"> Amazonas
+        <input type="radio" name="q6" value="b"> Minas Gerais
+        <input type="radio" name="q6" value="c"> Bahia
+        <input type="radio" name="q6" value="d"> São Paulo
+        <button type="button" class="dica" data-dica="É o maior estado da região Norte e abriga parte da maior floresta tropical do mundo">Dica</button>
+      </li>
+      <!-- Questão 7 -->
+      <li>
+        <label for="q7">Quem foi o presidente do Brasil durante a proclamação da República?</label><br>
+        <input type="radio" name="q7" value="a"> Dom Pedro I
+        <input type="radio" name="q7" value="b"> Marechal Deodoro da Fonseca
+        <input type="radio" name="q7" value="c"> Getúlio Vargas
+        <input type="radio" name="q7" value="d"> Juscelino Kubitschek
+        <button type="button" class="dica" data-dica="Ele era um militar e liderou o movimento que instaurou o regime republicano no Brasil">Dica</button>
+      </li>
+      <!-- Questão 8 -->
+      <li>
+        <label for="q8">Qual é a maior festa popular do Brasil?</label><br>
+        <input type="radio" name="q8" value="a"> Ano Novo
+        <input type="radio" name="q8" value="b"> Natal
+        <input type="radio" name="q8" value="c"> Carnaval
+        <input type="radio" name="q8" value="d"> São João
+        <button type="button" class="dica" data-dica="É uma festa realizada antes da Quaresma e é famosa por seus desfiles de escolas de samba">Dica</button>
+      </li>
+      <!-- Questão 9 -->
+      <li>
+        <label for="q9">Qual é o nome da moeda oficial do Brasil?</label><br>
+        <input type="radio" name="q9" value="a"> Peso
+        <input type="radio" name="q9" value="b"> Real
+        <input type="radio" name="q9" value="c"> Dólar
+        <input type="radio" name="q9" value="d"> Euro
+        <button type="button" class="dica" data-dica="É a moeda em circulação no país desde 1994">Dica</button>
+      </li>
+      <!-- Questão 10 -->
+      <li>
+        <label for="q10">Qual é a cidade conhecida como "Cidade Maravilhosa"?</label><br>
+        <input type="radio" name="q10" value="a"> Brasília
+        <input type="radio" name="q10" value="b"> São Paulo
+        <input type="radio" name="q10" value="c"> Rio de Janeiro
+        <input type="radio" name="q10" value="d"> Salvador
+        <button type="button" class="dica" data-dica="Essa cidade é famosa por suas belas praias, montanhas e monumentos icônicos">Dica</button>
+
+
+    </ol>
+    <button type="submit">Próxima Questão</button>
+    <button type="button" id="reiniciar" style="display: none;">Reiniciar</button>
+  </form>
+  <div id="resultado">
+    <h2>Resultado:</h2>
+    <p>Você acertou <span id="pontuacao"></span> questões.</p>
+  </div>
+  <div id="video-container">
+    <label for="videoInput">Insira o link do vídeo do YouTube:</label>
+    <input type="text" id="videoInput">
+    <button type="button" id="addVideoButton">Adicionar Vídeo</button>
+  </div>
+  <div id="videoFrame" style="display: none;">
+    <iframe id="youtubeFrame" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+    const form = document.getElementById('quizForm');
+  const reiniciarButton = document.getElementById('reiniciar');
+  const resultadoDiv = document.getElementById('resultado');
+  const pontuacaoSpan = document.getElementById('pontuacao');
+  const barraProgresso = document.getElementById('barra');
+  const dicas = document.querySelectorAll('.dica');
+  const questoes = document.querySelectorAll('li');
+  const totalQuestoes = questoes.length;
+
+  let questaoAtual = 0;
+  let pontuacao = 0;
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const respostaSelecionada = form.elements[`q${questaoAtual + 1}`].value;
+    const respostaCorreta = 'a';
+
+    if (respostaSelecionada === respostaCorreta) {
+      pontuacao++;
+    }
+
+    questaoAtual++;
+
+    if (questaoAtual < totalQuestoes) {
+      mostrarQuestao(questaoAtual);
+    } else {
+      mostrarResultado();
+    }
+  });
+
+  reiniciarButton.addEventListener('click', function() {
+    questaoAtual = 0;
+    pontuacao = 0;
+    mostrarQuestao(questaoAtual);
+    resultadoDiv.style.display = 'none';
+    barraProgresso.style.width = '0%';
+    reiniciarButton.style.display = 'none';
+  });
+
+  dicas.forEach(function(dicaButton) {
+    dicaButton.addEventListener('click', function() {
+      const dica = this.getAttribute('data-dica');
+      alert(dica);
+    });
+  });
+
+  function mostrarQuestao(indice) {
+    questoes.forEach((questao, i) => {
+      if (i === indice) {
+        questao.style.display = 'block';
+      } else {
+        questao.style.display = 'none';
+      }
+    });
+
+    const porcentagem = (indice / totalQuestoes) * 100;
+    barraProgresso.style.width = `${porcentagem}%`;
+  }
+
+  function mostrarResultado() {
+    pontuacaoSpan.textContent = pontuacao;
+    resultadoDiv.style.display = 'block';
+    reiniciarButton.style.display = 'block';
+  }
+
+  mostrarQuestao(questaoAtual);
+</script>
+</body>
+</html>
